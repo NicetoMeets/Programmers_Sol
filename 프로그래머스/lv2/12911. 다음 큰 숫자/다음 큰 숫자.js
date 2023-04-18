@@ -12,8 +12,6 @@ function solution(n) {
       if(el=='1') Acount++})
           
       if(Ncount==Acount) return a
-
-      a+=1
-  
+      a++
   }
 }
