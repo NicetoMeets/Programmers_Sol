@@ -1,19 +1,17 @@
-function solution(hp) {
+function solution(n) {
   let count = 0;
-  while(true){
-      if(hp >= 5){
-          hp = hp - 5;
-          count++;
-      }else if(hp < 5 && hp >= 3){
-          hp = hp - 3;
-          count++;
-      }else if(hp == 2 || hp == 1){
-          hp = hp - 1;
-          count++;
-      }else if(hp == 0){
-          break;
-      }
-
+  while (1) {
+    if (n >= 5) {
+      n -=5
+      count+=1
+    } else if (n < 5 && n >= 3) {
+      n -=3
+      count+=1
+    } else if (n < 3 && n > 0) {
+      n -=1
+      count+=1
+    } else if (n == 0) {
+      return count;
+    }
   }
-  return count;
 }
