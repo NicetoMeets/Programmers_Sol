@@ -1,22 +1,10 @@
 function solution(k, m, score) {
 
-    var answer = 0;
-    let a = 0
+    let answer = 0;
 
-    score.sort((a,b)=>b-a)
-
-    while(a < score.length){
-
-        const newSlice = score.slice(a,a+m)
-
-        a+= m
-
-        if(newSlice.length === m){
-
-            answer += (Math.min(...newSlice) * m)
-
-        }
+    const sortedScore = score.sort((a, b) => a - b).slice(score.length % m);
+    for (let i = 0; i < sortedScore.length; i += m) {
+        answer += sortedScore[i] * m;
     }
-
     return answer;
 }
